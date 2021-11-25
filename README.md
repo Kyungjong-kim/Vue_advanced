@@ -1,4 +1,4 @@
-# vue-master
+# vue-advanced
 
 ## 뷰 완벽가이드
 
