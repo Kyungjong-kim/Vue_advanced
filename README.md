@@ -9,7 +9,18 @@
 - 2021-12-01 상세페이지 작성
   -- news, ask 내 상세페이지 작성.
 - 2022-03-07 컴포넌트 페이지리스트 단일화
+- 2022-04-25 페이지 HOC 및 MIXIN을 통해 리팩토링, api 단일화.
 
 ## 사용한 api
 
 [HackerNews](https://github.com/tastejs/hacker-news-pwas/blob/master/docs/api.md, '해커뉴스')
+
+## 데이터 호출 시점
+
+1. 라우터 네비게이션 가드
+
+- 특정 url로 접근하기 전의 동작을 정의하는 속성(함수)
+
+2. 컴포넌트 라이프 사이클 훅
+
+- created: (컴포넌트가 생성)되자 마자 호출되는 로직

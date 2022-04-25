@@ -4,11 +4,15 @@
               <i class="fas fa-user"></i>
             </div>
             <div class="user-description">
-              <div>
-              {{userInfo.id}}
-              </div>
+              <slot name='username'></slot>
+                <!--상위 컴포넌트에서 정의할 영역-->
               <div class="time">
-                {{userInfo.created}}
+                <slot name='time'></slot>
+                <!--상위 컴포넌트에서 정의할 영역-->
+              </div>
+              <div class="karma">
+                <slot name='karma'></slot>
+                <!--상위 컴포넌트에서 정의할 영역-->
               </div>
              </div>
         </div>
@@ -16,6 +20,9 @@
 
 <script>
 export default {
+  props: {
+    info: Object
+  },
   computed: {
     userInfo(){
       return this.$store.state.user

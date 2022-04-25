@@ -8,8 +8,10 @@ const store = createStore({
       news: [],
       ask: [],
       jobs: [],
+      list: [],
       user: {},
-      item: [],
+      item: {},
+      loadingStatus: false,
     };
   },
   getters,

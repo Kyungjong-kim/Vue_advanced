@@ -1,22 +1,21 @@
 <template>
   <div>
     <section>
-      <!--질문 상세정보-->
+      <user-profile :info="fetchedItem">
+        <template v-slot:username>
+          <router-link :to="`/user/${fetchedItem.user}`">
+                {{fetchedItem.user}}
+          </router-link>
+          </template>
+        <template v-slot:time>{{'Posted '+ fetchedItem.time_ago}}</template>
+      </user-profile>
+    </section>
+    <section>
+      <h2>{{fetchedItem.title}}</h2>
+    </section>
+    <section>
+      <!--사용자 상세정보-->
       <div>
-        <h2>{{fetchedItem.title}}</h2>
-        <div class="user-container">
-            <div>
-              <i class="fas fa-user"></i>
-            </div>
-            <div class="user-description">
-              <router-link :to="`/user/${fetchedItem.user}`">
-              {{fetchedItem.user}}
-              </router-link>
-              <div class="time">
-                {{fetchedItem.time_ago}}
-              </div>
-             </div>
-        </div>
         <div>
           <p v-html="fetchedItem.content"></p>
         </div>
@@ -29,8 +28,12 @@
 </template>
 
 <script>
+import UserProfile from '../components/UserProfile.vue';
 import { mapGetters } from 'vuex';
 export default {
+  components: {
+    UserProfile
+  },
   computed: {
     ...mapGetters(['fetchedItem'])
   },
