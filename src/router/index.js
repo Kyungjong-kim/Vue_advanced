@@ -3,7 +3,7 @@ import ItemView from '../views/ItemView.vue';
 import UserView from '../views/UserView.vue';
 import NewsView from '../views/NewsView.vue';
 import CreateListView from '../views/CreateListView.js';
-
+import store from '../store/index.js';
 const routes = [
   {
     path: '/',
@@ -13,6 +13,17 @@ const routes = [
     path: '/news',
     name: 'news',
     component: NewsView, // 믹스인테스트
+    beforeEnter: (to, from, next) => {
+      store.dispatch('START_SPINNER');
+      store
+        .dispatch('FETCH_LIST', to.name)
+        .then(() => {
+          console.log('fetched');
+          //store.dispatch('END_SPINNER');
+          next();
+        })
+        .catch((error) => console.log(error));
+    }
   },
   {
     path: '/ask',
