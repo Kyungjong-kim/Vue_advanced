@@ -15,7 +15,7 @@
 
 ## 사용한 api
 
-[HackerNews](https://github.com/tastejs/hacker-news-pwas/blob/master/docs/api.md, '해커뉴스')
+[HackerNews](https://github.com/tastejs/hacker-news-pwas/blob/master/docs/api.md, "해커뉴스")
 
 ## 데이터 호출 시점
 
@@ -29,7 +29,7 @@
 
 ## 외부라이브러리 모듈화
 
-- 이유 : Vue.js 관련 라이브러리가 없을 때 일반 라이브러리를 결함 할 수 있어야 함.
+- 이유 : Vue.js 관련 라이브러리가 없을 때 일반 라이브러리를 결합 할 수 있어야 함.
 - 종류
   1. 차트
   2. 데이트 피커
